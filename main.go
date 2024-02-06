@@ -13,7 +13,7 @@ const (
 	username       = "123"  //用户
 	password       = "123"  //密码
 	port           = "8812" //端口
-	filePath       = ".url"
+	filePath       = ".ip"
 	filePathDomain = ".domain"
 	defaultText    = "# Enter your content here"
 )
@@ -261,19 +261,18 @@ func editorHandler(w http.ResponseWriter, r *http.Request) {
 				<p class="success">保存成功！</p>
 			{{ end }}
 			<form action="/save" method="post">
-			<div class="form-section">
-				<div>
-					<label for="content">加白IP</label>
-					<textarea name="content">{{ .Content }}</textarea>
+				<div class="form-section">
+					<div>
+						<label for="contentdomain">域名</label>
+						<textarea name="contentdomain">{{ .ContentDomain }}</textarea>
+					</div>
+					<div>
+						<label for="content">加白IP</label>
+						<textarea name="content">{{ .Content }}</textarea>
+					</div>
 				</div>
-				<div>
-					<label for="contentdomain">域名</label>
-					<textarea name="contentdomain">{{ .ContentDomain }}</textarea>
-				</div>
-			</div>
-			<button type="submit">保存启动</button>
-		</form>
-		</form>
+				<button type="submit">保存启动</button>
+			</form>
 		</body>
 		</html>
 	`
